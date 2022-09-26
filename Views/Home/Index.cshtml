@@ -1,0 +1,159 @@
+﻿@model EmployeeSystem.Models.EmployeeViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="class=" page-body" style="font-family:Kalpurush">
+
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <h2>Employee Data List</h2>
+        </div>
+    </div>
+    <hr />
+    <form action="#" method="post" id="ApplicantIformation">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="form-group   ">
+                    <label class="col-form-label col-form-label-sm col-md-4" for="Emp_Name">Employee ID<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control form-control-sm col-md-8" name="Emp_ID" id="" placeholder="Employee ID">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-md-4" for="Emp_Name">Employee Name<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control form-control-sm col-md-8 " name="Emp_Name" id="" placeholder="Employee Name">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-sm col-md-4" for="Emp_Father_Name">Emp_Father_Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control form-control-sm col-md-8" name="Emp_Father_Name" id="" placeholder="Emp_Father_Name">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-md-4" for="Emp_PhoneNumber">Emp_PhoneNumber<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control form-control-sm col-md-8 " name="Emp_PhoneNumber" id="" placeholder="Emp_PhoneNumber">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          
+            <div class="col-md-6">
+                <div class="form-group ">
+                    <label class="col-form-label col-form-label-sm col-md-4" for="Emp_Mother_Name">Emp_Mother_Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control form-control-sm col-md-8" name="Emp_Mother_Name" id="" placeholder="Emp_Mother_Name" >
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-md-4" for="Emp_BloodGroup">Emp_BloodGroup<span class="text-danger">*</span></label>
+                    <select id="BloodGroup" name="Emp_BloodGroup" class="form-control form-control-sm col-md-8">
+                        <option value="O+" selected>O+</option>
+                        <option value="A-">A-</option>
+                        <option value="A+">A+</option>
+                        <option value="B-">B-</option>
+
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+           
+            <div class="col-md-6">
+                <div class="form-group   ">
+                    <label class="col-form-label col-form-label-sm col-md-4" for="Emp_DateOfBirth">Emp_DateOfBirth <span class="text-danger">*</span></label>
+                    <input type="date" class="form-control form-control-sm col-md-8" name="Emp_JoinDate" id="" placeholder="Emp_DateOfBirth" >
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-md-4" for="Emp_Marit_Status">Emp_Marit_Status<span class="text-danger">*</span></label>
+                    <select id="BloodGroup" name="Emp_Marit_Status" class="form-control form-control-sm col-md-8">
+                        <option value="Unmarrid" selected>Unmarrid</option>
+                        <option value="Marrid">Mariid</option>
+
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          
+            <div class="col-md-6">
+                <div class="form-group   ">
+                    <label class="col-form-label col-form-label-sm col-md-4">Emp_Salary <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control form-control-sm col-md-8" name="Emp_Salary" id="" placeholder="Emp_Salary">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-md-4">Emp_PresentAddress<span class="text-danger">*</span></label>
+                    <textarea class="form-control form-control-sm col-md-8" rows="5" name="Emp_PresentAddress" id="" placeholder="Present Address"></textarea>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <input type="submit" class="btn btn-success float-right" id="btnFileArchive1" value="Submit">
+            </div>
+            
+
+        </div>
+
+    </form>
+</div>
+<br/>
+
+@if (Model != null) {
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table-bordered"  width="100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Father Name</th>
+                    <th> Phone</th>
+                    <th> Mother Name</th>
+                    <th> Blood Group</th>
+                    <th> Date Of Birth</th>
+                    <th> Marit Status</th>
+                    <th>Salary</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Empinfo)
+                {
+                <tr>
+                    <td>@item.Emp_ID</td>
+                    <td>@item.Emp_Name</td>
+                    <td>@item.Emp_Father_Name</td>
+                    <td>@item.Emp_PhoneNumber</td>
+                    <td>@item.Emp_Mother_Name</td>
+                    <td>@item.Emp_BloodGroup</td>
+                    <td>@item.Emp_DateOfBirth </td >
+                    <td>@item.Emp_Marit_Status</td>
+                    <td>@item.Emp_Salary</td>
+                    <td>@item.Emp_PresentAddress</td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+}
